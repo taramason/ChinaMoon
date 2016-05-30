@@ -16,6 +16,9 @@ body {
   overflow: auto;
   position:absolute;
   left:0;
+
+  /*You can get rid of this I was just seeing if it made the text easier to read. Might not be what you want*/
+  opacity:0.89;
 }
 #box {
   margin-left:auto;
@@ -44,12 +47,30 @@ div {
 #right1 {
   background-color: white;
   opacity: .5;
-  min-height: 620px;
+  /*min-height: 620px;*/
   padding-top: 10px;
   margin: 10px;
   font-family: 'Arimo', sans-serif;
   font-size: 16px;
   text-align: left;
+  max-height:300px;
+
+/*some of the text did not fit in this box when the response was long. I commented out yoru min height, added a
+max height and then an overflow auto which will automatically add a scroll bar if the text is too long for the box
+but that way also make a more correct size box for short responses*/
+  max-height: 600px;
+  overflow: auto;
+  color:black;
+  opacity:1;
+  background-color:rgba(241, 247, 242, 0.5);
+
+  /*might consider using background color as an rgba value so it has rgb as white and a as the opacity that way only
+  the background is affected by the color and not the text that show up.. so maybe text are easier to read ? I
+  used it in the box that will show up after user input so you can decide if you like it33*/
+
+
+/*I added this so the box does not show up until there is information to fill it.*/
+  display:none;
 }
 
 #ratImg {
